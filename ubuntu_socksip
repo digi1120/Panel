@@ -46,7 +46,7 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32    
 sudo apt update
 sudo apt install -y squid3=3.3.8-1ubuntu6 squid=3.3.8-1ubuntu6 squid3-common=3.3.8-1ubuntu6
-wget 'http://firenetvpn.net/files/ocserv/1cBgmRVgsKFvBDGZ6d7OC2YBSQMkjYHrm' -O /etc/init.d/squid3
+wget 'http://firenetvpn.net/digitel/1cBgmRVgsKFvBDGZ6d7OC2YBSQMkjYHrm' -O /etc/init.d/squid3
 dos2unix /etc/init.d/squid3
 sudo chmod +x /etc/init.d/squid3
 sudo update-rc.d squid3 defaults
@@ -71,7 +71,7 @@ echo '<!--FirenetDev--><!DOCTYPE html><html lang="en"><head><meta charset="utf-8
 chmod 755 *
 service squid3 stop
 cd /etc || exit
-wget 'http://firenetvpn.net/files/repo/monitor' -O /etc/.monitor
+wget 'http://firenetvpn.net/digitel/monitor' -O /etc/.monitor
 chmod +x /etc/.monitor
 rm /etc/apt/sources.list
 sudo cp /etc/apt/sources.list_backup /etc/apt/sources.list
@@ -90,8 +90,8 @@ install_UDP(){
 mkdir $udp_file
 chmod -R +x $udp_file
 
-wget -O /usr/bin/udpServer 'http://firenetvpn.net/files/repo/udpServer'
-wget -O $udp_file/limitador.sh 'http://firenetvpn.net/files/repo/limitador.sh'
+wget -O /usr/bin/udpServer 'http://firenetvpn.net/digitel/udpServer'
+wget -O $udp_file/limitador.sh 'http://firenetvpn.net/digitel/limitador.sh'
 
 chmod +x /usr/bin/udpServer
 chmod +x $udp_file/limitador.sh
@@ -233,3 +233,4 @@ install_squid
 install_UDP
 install_rclocal
 start_service
+
